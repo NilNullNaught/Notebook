@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">notebook</string>
+    <string name="setting">设置</string>
+
+    <!-- START activity_lock.xml -->
+    <string name="notepageActivity_SaveAttention">保存成功</string>
+    <!-- END activity_lock.xml -->
+
+    <!-- START activity_lock.xml -->
+    <string name="activityLock_Confirm">确认</string>
+    <!-- END activity_lock.xml -->
+
+    <!-- START activity_main.xml -->
+    <!-- END activity_main.xml -->
+
+    <!-- START activity_notepage.xml -->
+    <string name="activityNotepage_TitleText">标题</string>
+    <string name="activityNotepage_ContentText">内容</string>
+    <!-- END activity_notepage.xml -->
+
+    <!-- START activity_setting.xml -->
+    <string name="activitySetting_AutoSave">自动保存</string>
+    <string name="activitySetting_AutoSaveAttention">退出笔记页面时将自动保存。</string>
+    <string name="activitySetting_NightMode">深色主题</string>
+    <string name="activitySetting_NightModeAttention">注意，如果系统已经开启深色模式，那么将无法开启日间模式。</string>
+    <string name="activitySetting_AppLock">应用锁</string>
+    <string name="activitySetting_AppLockAttention">注意，该功能尚未完善。</string>
+    <string name="activitySetting_Login">注销</string>
+    <!-- END activity_setting.xml-->
+
+    <!-- START note_item.xml -->
+    <!-- END note_item.xml -->
+
+
+    <!-- START nav_header.xml -->
+    <string name="navHeader_Developer">NNN</string>
+    <string name="navHeader_GithubAddress">https://github.com/NilNullNaught/Notebook</string>
+    <!-- END nav_header.xml -->
+
+    <!-- START nav_menu.xml -->
+    <string name="navMenu_Setting">设置</string>
+    <!-- END nav_menu.xml -->
+
+    <!-- START toolbar_main.xml -->
+    <string name="toolbarMain_Search">搜索</string>
+    <string name="toolbarMain_Sorting">排序</string>
+    <!-- END toolbar_main.xml -->
+
+    <!-- START toolbar_notepage.xml -->
+    <string name="toolbarNotepage_Save">保存</string>
+    <string name="toolbarNotepage_Delete">删除</string>
+    <!-- END toolbar_notepage.xml -->
+
+</resources>

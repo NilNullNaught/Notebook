@@ -1,0 +1,14 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!-- 因为引入了 Material 库，所以必须使用  Theme.MaterialComponents，否则在使用部分控件时，程序会崩溃-->
+    <!-- 因为需要兼容夜间模式，所以使用  DayNight-->
+    <!-- 因为标题栏使用 Toolbar 实现，所以使用 NoActionBar-->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+</resources>
