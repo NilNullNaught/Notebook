@@ -10,7 +10,6 @@ import cn.nnn.notebook.R
 import cn.nnn.notebook.logic.model.dataclass.Note
 import cn.nnn.notebook.ui.notepage.NotepageActivity
 
-
 class NoteCardAdapter(val context: Context, var noteList: List<Note>):
     RecyclerView.Adapter<NoteCardAdapter.ViewHolder>() {
 

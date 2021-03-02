@@ -1,5 +1,6 @@
 package cn.nnn.notebook.ui.main
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import cn.nnn.notebook.NoteApplication

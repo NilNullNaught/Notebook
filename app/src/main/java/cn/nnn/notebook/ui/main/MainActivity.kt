@@ -2,6 +2,7 @@ package cn.nnn.notebook.ui.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AlertDialog
@@ -13,13 +14,10 @@ import cn.nnn.notebook.R
 import cn.nnn.notebook.BaseActivity
 import cn.nnn.notebook.NoteApplication
 import cn.nnn.notebook.logic.model.dataclass.Note
-import cn.nnn.notebook.ui.lock.LockActivity
 import cn.nnn.notebook.ui.notepage.NotepageActivity
-import cn.nnn.notebook.ui.search.NoteListAdapter
 import cn.nnn.notebook.ui.search.SearchActivity
 import cn.nnn.notebook.ui.setting.SettingActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlin.collections.ArrayList
 
 class MainActivity : BaseActivity() {
 
@@ -43,6 +41,7 @@ class MainActivity : BaseActivity() {
         }
     }
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -63,8 +62,11 @@ class MainActivity : BaseActivity() {
     private fun viewModel() {
         viewModel = ViewModelProvider(this)
             .get(MainViewModel::class.java)
+
         viewModel.noteList.observe(this, Observer {
+            Log.d("!!!!!","1000")
             noteCardAdapter?.notifyDataSetChanged()
+            Log.d("!!!!!","${noteCardAdapter == null}")
             //表示刷新事件结束，并隐藏刷新进度条
             activityMain_SwipeRefresh.isRefreshing = false
         })
@@ -87,8 +89,8 @@ class MainActivity : BaseActivity() {
             StaggeredGridLayoutManager.VERTICAL
         )
         activityMain_RecyclerView.layoutManager = layoutManager
-        val adapter = NoteCardAdapter(this, viewModel.noteList.value!!)
-        activityMain_RecyclerView.adapter = adapter
+        noteCardAdapter = NoteCardAdapter(this, viewModel.noteList.value!!)
+        activityMain_RecyclerView.adapter = noteCardAdapter
     }
 
     private fun activityMain_NavView() {
@@ -125,6 +127,7 @@ class MainActivity : BaseActivity() {
 
     override fun onStart() {
         super.onStart()
+        Log.d("!!!!!","1000")
         viewModel.queryNoteList()
     }
 

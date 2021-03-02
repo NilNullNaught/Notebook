@@ -75,16 +75,15 @@ class SearchActivity : BaseActivity() {
 
     private fun activitySearch_RecyclerView(){
         val layoutManager = LinearLayoutManager(this)
-
         activitySearch_RecyclerView.layoutManager = layoutManager
-
-        val adapter = NoteCardAdapter(this, viewModel.noteList.value!! as List<Note>)
-        activitySearch_RecyclerView.adapter = adapter
+        noteListAdapter = NoteListAdapter(this, viewModel.noteList.value!! as List<Note>)
+        activitySearch_RecyclerView.adapter = noteListAdapter
     }
 
     private fun activitySearch_Clear(){
         activitySearch_Clear.setOnClickListener {
             activitySearch_Search.setText("")
+            viewModel.clear()
         }
     }
 

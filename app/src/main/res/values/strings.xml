@@ -2,9 +2,14 @@
     <string name="app_name">notebook</string>
     <string name="setting">设置</string>
 
-    <!-- START activity_lock.xml -->
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
+
+    <!-- START NotepageActivity.kt -->
     <string name="notepageActivity_SaveAttention">保存成功</string>
-    <!-- END activity_lock.xml -->
+    <string name="notepageActivity_SaveTitle">保存</string>
+    <string name="notepageActivity_SaveMessage">尚未保存，是否退出</string>
+    <!-- END NotepageActivity.kt -->
 
     <!-- START activity_lock.xml -->
     <string name="activityLock_Confirm">确认</string>

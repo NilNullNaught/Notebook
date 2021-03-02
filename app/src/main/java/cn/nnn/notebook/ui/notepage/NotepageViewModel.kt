@@ -46,7 +46,7 @@ class NotepageViewModel(private var noteReserved: Note): ViewModel() {
                 note.value?.id = id
             }
 
-            isSaved.postValue(!(isSaved.value!!))
+            isSaved.postValue(true)
         }
     }
 

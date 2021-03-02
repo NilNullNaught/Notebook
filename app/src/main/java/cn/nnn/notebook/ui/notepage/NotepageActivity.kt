@@ -123,13 +123,13 @@ class NotepageActivity : BaseActivity() {
             finish()
         }else{
             AlertDialog.Builder(this).apply {
-                setTitle("排序")
-                setMessage("尚未保存，是否退出")
+                setTitle(getString(R.string.notepageActivity_SaveTitle))
+                setMessage(getString(R.string.notepageActivity_SaveMessage))
                 setCancelable(false)
-                setPositiveButton("确认"){ _, _ ->
+                setPositiveButton(getString(R.string.confirm)){ _, _ ->
                     finish()
                 }
-                setNegativeButton("取消") { _, _ ->
+                setNegativeButton(getString(R.string.cancel)) { _, _ ->
                 }
                 show()
             }

@@ -25,4 +25,9 @@ class SearchViewModel: ViewModel(){
             noteList.postValue(noteList.value)
         }
     }
+
+    fun clear(){
+        _noteList.clear()
+        noteList.value = noteList.value
+    }
 }
