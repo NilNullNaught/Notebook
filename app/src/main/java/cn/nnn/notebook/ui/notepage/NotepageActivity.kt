@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AlertDialog
@@ -15,6 +16,7 @@ import cn.nnn.notebook.BaseActivity
 import cn.nnn.notebook.NoteApplication
 import cn.nnn.notebook.logic.model.dataclass.Note
 import cn.nnn.notebook.ui.main.MainActivity
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_notepage.*
 
 class NotepageActivity : BaseActivity() {
@@ -100,8 +102,24 @@ class NotepageActivity : BaseActivity() {
                 getString(R.string.notepageActivity_SaveAttention).showToast()
             }
             R.id.toolbarNotepage_Delete ->{
-                viewModel.executeDelete()
-                MainActivity.actionStart()
+                if (NoteApplication.deleteConfirm){
+                    AlertDialog.Builder(this).apply {
+                        setTitle(getString(R.string.notepageActivity_DeleteTitle))
+                        setMessage(getString(R.string.notepageActivity_DeleteMessage))
+                        setCancelable(false)
+                        setPositiveButton(getString(R.string.confirm)){ _, _ ->
+                            viewModel.executeDelete()
+                            finish()
+                        }
+                        setNegativeButton(getString(R.string.cancel)) { _, _ ->
+                        }
+                        show()
+                    }
+                }else{
+                    viewModel.executeDelete()
+                    finish()
+                }
+
             }
         }
         return super.onOptionsItemSelected(item)

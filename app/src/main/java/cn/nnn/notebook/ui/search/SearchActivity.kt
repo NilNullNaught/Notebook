@@ -83,14 +83,17 @@ class SearchActivity : BaseActivity() {
     private fun activitySearch_Clear(){
         activitySearch_Clear.setOnClickListener {
             activitySearch_Search.setText("")
-            viewModel.clear()
         }
     }
 
     private fun  activitySearch_Search(){
         activitySearch_Search.addTextChangedListener( object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
-                viewModel.queryNote(s.toString())
+                if(s.toString() != ""){
+                    viewModel.queryNote(s.toString())
+                }else{
+                    viewModel.clear()
+                }
             }
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }

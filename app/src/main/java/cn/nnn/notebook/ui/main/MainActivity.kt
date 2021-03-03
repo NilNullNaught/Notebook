@@ -64,9 +64,7 @@ class MainActivity : BaseActivity() {
             .get(MainViewModel::class.java)
 
         viewModel.noteList.observe(this, Observer {
-            Log.d("!!!!!","1000")
             noteCardAdapter?.notifyDataSetChanged()
-            Log.d("!!!!!","${noteCardAdapter == null}")
             //表示刷新事件结束，并隐藏刷新进度条
             activityMain_SwipeRefresh.isRefreshing = false
         })
@@ -127,7 +125,6 @@ class MainActivity : BaseActivity() {
 
     override fun onStart() {
         super.onStart()
-        Log.d("!!!!!","1000")
         viewModel.queryNoteList()
     }
 

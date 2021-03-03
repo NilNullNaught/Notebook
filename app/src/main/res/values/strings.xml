@@ -9,6 +9,9 @@
     <string name="notepageActivity_SaveAttention">保存成功</string>
     <string name="notepageActivity_SaveTitle">保存</string>
     <string name="notepageActivity_SaveMessage">尚未保存，是否退出</string>
+
+    <string name="notepageActivity_DeleteTitle">删除</string>
+    <string name="notepageActivity_DeleteMessage">确认删除？</string>
     <!-- END NotepageActivity.kt -->
 
     <!-- START activity_lock.xml -->
@@ -26,6 +29,8 @@
     <!-- START activity_setting.xml -->
     <string name="activitySetting_AutoSave">自动保存</string>
     <string name="activitySetting_AutoSaveAttention">退出笔记页面时将自动保存。</string>
+    <string name="activitySetting_DeleteConfirm">删除确认</string>
+    <string name="activitySetting_DeleteConfirmAttention">删除时显示确认对话框</string>
     <string name="activitySetting_NightMode">深色主题</string>
     <string name="activitySetting_NightModeAttention">注意，如果系统已经开启深色模式，那么将无法开启日间模式。</string>
     <string name="activitySetting_AppLock">应用锁</string>

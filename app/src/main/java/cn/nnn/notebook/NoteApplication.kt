@@ -16,10 +16,11 @@ class NoteApplication:Application() {
         var isDarkThemeSystem:Boolean = false
 
         var isLocking:Boolean = false //应用锁是否解除
-
         var lockSetting:Boolean = false //是否开启应用锁
 
         var isAutoSave:Boolean = true
+
+        var deleteConfirm:Boolean = false
 
         @SuppressLint("StaticFieldLeak")
         lateinit var context: Context
@@ -43,7 +44,8 @@ class NoteApplication:Application() {
         isAutoSave = context.getSharedPreferences(Setting, Context.MODE_PRIVATE)
             .getBoolean("boolean_isAutoSave_state", true)
 
-
+        deleteConfirm = context.getSharedPreferences(Setting, Context.MODE_PRIVATE)
+            .getBoolean("boolean_deleteConfirm_state", false)
     }
 
 
